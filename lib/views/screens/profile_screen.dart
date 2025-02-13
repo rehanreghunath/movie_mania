@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:movie_mania/data/notifiers.dart';
-import 'package:movie_mania/views/widget_tree.dart';
+import 'package:movie_mania/views/profile_page.dart';
 
-void main() {
-  runApp(const MainApp());
-}
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +19,7 @@ class MainApp extends StatelessWidget {
             brightness: isDarkMode? Brightness.dark : Brightness.light,
         ),
       ),
-      home: WidgetTree(),
+      home: ProfilePage(),
     );
     },);
   }
