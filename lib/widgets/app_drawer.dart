@@ -1,9 +1,22 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_mania/views/screens/profile_screen.dart';
+import 'package:movie_mania/views/screens/settings_screen.dart';
 
-class AppDrawer extends StatelessWidget {
+final user = FirebaseAuth.instance.currentUser;
+
+String name =  user?.displayName ?? "New User";
+
+class AppDrawer extends StatefulWidget {
   const AppDrawer({super.key});
 
+  @override
+  State<AppDrawer> createState() => _AppDrawerState();
+}
+
+class _AppDrawerState extends State<AppDrawer> {
+
+  
   @override
   Widget build(BuildContext context) {
     return Drawer(  
@@ -11,13 +24,13 @@ class AppDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text("Guest"),
-            accountEmail: Text("guest123@gmail.com"),
+            accountName: Text((name)),
+            accountEmail: Text(user!.email!),
+            decoration: BoxDecoration(color: const Color.fromARGB(255, 21, 18, 37)),
             currentAccountPicture: CircleAvatar(
               backgroundColor: const Color.fromARGB(255, 161, 161, 161),
-              
               backgroundImage: NetworkImage(
-                "https://icons.veryicon.com/png/o/miscellaneous/youyinzhibo/guest.png",
+                user?.photoURL ?? "https://via.placeholder.com/150",
                 ),
             ),
           ),
@@ -39,12 +52,18 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.settings),
             title: Text("Settings"),
-            // onTap: () => Navigator.pushNamed(context, "/stats"),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return SettingsScreen();
+                },));
+            },
           ),
           Divider(),
           ListTile(
             leading: Icon(Icons.logout),
             title: Text("Logout"),
+            onTap: () => FirebaseAuth.instance.signOut(),
             
           ),
         ],

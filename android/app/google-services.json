@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "770384568976",
+    "project_id": "moviemania-123",
+    "storage_bucket": "moviemania-123.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770384568976:android:326db7b4f550f3a5e56e15",
+        "android_client_info": {
+          "package_name": "com.example.movie_mania"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhwRpajdUcXYnMXSL8UF_aQuM3HqXPzJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
