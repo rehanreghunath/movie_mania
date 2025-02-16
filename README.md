@@ -4,10 +4,10 @@ Movie Mania is a Flutter-based movie exploration app that allows users to search
 
 # Features
 
-✅ Google Sign-In for easy authentication
-✅ Search Functionality to find any movie
-✅ Detailed Movie Information (release date, rating, plot)
-✅ Personalized Watchlist stored securely in Firebase
+- Google Sign-In for easy authentication <br>
+- Search Functionality to find any movie <br>
+- Detailed Movie Information (release date, rating, plot) <br>
+- Personalized Watchlist stored securely in Firebase <br>
 
 # Tech Stack
 
