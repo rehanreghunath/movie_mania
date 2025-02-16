@@ -1,10 +1,11 @@
-// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_mania/data/notifiers.dart';
 import 'package:movie_mania/main_page.dart';
 import 'package:movie_mania/views/screens/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
-// import 'package:movie_mania/views/widget_tree.dart';
+import 'package:movie_mania/views/screens/movie_details_screen.dart';
+import 'package:movie_mania/views/screens/watchlist_screen.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,6 +30,7 @@ class MainApp extends StatelessWidget {
             brightness: isDarkMode? Brightness.dark : Brightness.light,
         ),
       ),
+    
       home: MainPage(),
     );
     },);

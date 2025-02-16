@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:movie_mania/services/omdb_apiservice_search.dart';
 import 'package:movie_mania/services/omdb_apiservice_moviedetails.dart';
+import 'package:movie_mania/services/watchlist_service.dart';
 import 'package:movie_mania/views/screens/movie_details_screen.dart';
+import 'package:movie_mania/views/screens/watchlist_screen.dart';
 
 
 class DiscoverScreen extends StatefulWidget {
@@ -38,6 +40,13 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
         _isLoading = false;
       });
     }
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+
+    super.dispose();
   }
 
   @override

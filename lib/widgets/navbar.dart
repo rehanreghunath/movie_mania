@@ -17,11 +17,8 @@ class _NavbarState extends State<Navbar> {
         return NavigationBar(
       destinations: [
         NavigationDestination(
-          icon: Icon(Icons.search_rounded), 
-          label: 'Discover'),
-        NavigationDestination(
-          icon: Icon(Icons.home_filled), 
-          label: 'Home'),
+          icon: Icon(Icons.add_outlined),
+          label: 'Add to Watchlist'),
         NavigationDestination(
           icon: Icon(Icons.list_rounded),
           label: 'Watchlist'),
