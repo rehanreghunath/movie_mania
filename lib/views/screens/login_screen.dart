@@ -36,6 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
       return await FirebaseAuth.instance.signInWithCredential(cred);
     }
     catch(e){
+      // ignore: avoid_print
       print(e.toString());
     }
     return null;
