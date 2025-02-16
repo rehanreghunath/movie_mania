@@ -11,9 +11,9 @@ Movie Mania is a Flutter-based movie exploration app that allows users to search
 
 # Tech Stack
 
-Framework: Flutter (Dart)
-Backend: Firebase Firestore
-Authentication: Firebase Auth (Google Sign-In)
-API: OMDB API
-Version Control: Git & GitHub
-IDE: Android Studio (Koala)
+Framework: Flutter (Dart) <br>
+Backend: Firebase Firestore <br>
+Authentication: Firebase Auth (Google Sign-In) <br>
+API: OMDB API <br>
+Version Control: Git & GitHub <br>
+IDE: Android Studio (Koala) <br>
