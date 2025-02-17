@@ -184,7 +184,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Not a member? ',
+                      'Don\'t have an account? ',
                       style: TextStyle(
                         color: Colors.grey  
                       )
