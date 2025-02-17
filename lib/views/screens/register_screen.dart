@@ -115,7 +115,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                 SizedBox(height: 20.0),
 
-                //Login Button
+                //Register Button
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: InkWell(
@@ -145,7 +145,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Are you a member? ',
+                      'Already have an account? ',
                       style: TextStyle(
                         color: Colors.grey  
                       )
