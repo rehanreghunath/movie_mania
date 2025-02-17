@@ -47,7 +47,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
     _searchController.dispose();
 
     super.dispose();
-  }
+  } //memory management
 
   @override
   Widget build(BuildContext context) {
@@ -65,13 +65,13 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                 hintText: 'Search for movies...',
                 suffixIcon: IconButton(
                   icon: const Icon(Icons.search),
-                  onPressed: _searchMovies,
+                  onPressed: _searchMovies, //calls function when user presses search icon
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
-              onSubmitted: (_) => _searchMovies(),
+              onSubmitted: (_) => _searchMovies(), //calls function when user presses enter after typing
             ),
             const SizedBox(height: 20),
             if (_isLoading)

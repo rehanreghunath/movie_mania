@@ -10,21 +10,23 @@ class WatchlistScreen extends StatelessWidget {
   void _removeFromWatchlist(BuildContext context, String movieId) async {
     try {
       await _watchlistService.removeFromWatchlist(movieId);
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Removed from Watchlist')),
-      );
+      
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error: $e')),
-      );
+      Exception(e);
     }
+  } 
+
+  void snackbar(BuildContext context) {
+  ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Removed from watchlist'), duration: Duration(seconds: 2)),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('My Watchlist')),
-      body: StreamBuilder<QuerySnapshot>(
+      body: StreamBuilder<QuerySnapshot>( // builds ui according to real time changes in data
         stream: _watchlistService.getWatchlist(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
@@ -55,8 +57,11 @@ class WatchlistScreen extends StatelessWidget {
                   subtitle: Text(movie['Year'] ?? 'No year'),
                   trailing: IconButton(
                     icon: const Icon(Icons.delete, color: Colors.red),
-                    onPressed: () => _removeFromWatchlist(
-                        context, movie['imdbID']),
+                    onPressed: () {
+                      _removeFromWatchlist(
+                        context, movie['imdbID']);
+                      snackbar(context);
+                    },
                   ),
                 ),
               );

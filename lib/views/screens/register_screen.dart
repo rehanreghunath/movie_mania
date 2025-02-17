@@ -24,6 +24,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       password: _passwordController.text.trim());
     }
     catch(e){
+      // ignore: avoid_print
       print('Error: $e');
     }
   }

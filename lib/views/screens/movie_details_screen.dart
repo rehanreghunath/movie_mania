@@ -19,7 +19,7 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
   @override
   void initState() {
     super.initState();
-    fetchDetails();
+    fetchDetails(); // Fetch details when the widget is first created
   }
 
   void fetchDetails() async {
@@ -29,19 +29,20 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
     });
   }
 
-    Future<void> _addToWatchlist(Map<String, dynamic> movie) async {
+  Future<void> _addToWatchlist(Map<String, dynamic> movie) async {
     try {
       await _watchlistService.addToWatchlist(movie);
-      ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Added to watchlist')),
-    );
-      
+
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error: $e')),
-      );
+      Exception(e);
     }
   }
+  
+  void snackbar() {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Added to watchlist'), duration: Duration(seconds: 2)),
+    );
+  } 
 
   @override
   
@@ -98,12 +99,15 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
                     Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10.0),
                     child: InkWell(
-                      onTap: () => _addToWatchlist({
+                      onTap: () {
+                        _addToWatchlist({
                         'imdbID': movieDetails!['imdbID'],
                         'Title': movieDetails!['Title'],
                         'Year': movieDetails!['Year'],
                         'Poster': movieDetails!['Poster'],}
-                      ),
+                      );
+                        snackbar();
+                      },
                       child: Container(
                         padding: EdgeInsets.all(20),
                         decoration: BoxDecoration(
@@ -122,8 +126,7 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
                       ),
                     )
                   ),
-                  ],
-                  
+                  ], 
                 ),
               ),
             ),
