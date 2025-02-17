@@ -1,3 +1,3 @@
 flutter clean
 flutter pub get
-flutter build apk --release
+flutter build apk --release --no-tree-shake-icons
