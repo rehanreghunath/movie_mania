@@ -17,3 +17,7 @@ Authentication: Firebase Auth (Google Sign-In/Email and Password Authentication)
 API: OMDB(Open Movie Database) API <br>
 Version Control: Git & GitHub <br>
 IDE: Android Studio (Koala) <br>
+
+# Demo
+
+https://github.com/user-attachments/assets/0d6561e8-50d1-4e24-b532-a20e7778f707
